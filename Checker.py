@@ -8,7 +8,6 @@ def Reset():
     while 1:
         Menu()
         os.system("pause")
-os.system('title Made by Eternal Demon ~ AntiSistema Pinger')
 Offline = (f"""    
 {Fore.LIGHTBLACK_EX}                                                                          ██▒▒                                                                        
 {Fore.LIGHTBLACK_EX}          ░░▓▓                                                            ██▓▓                                                          ░░▒▒          
@@ -122,7 +121,7 @@ def ping():
             time.sleep(0.1)
 
         else:
-            os.system('cls')
+            os.system('clear')
 
             print(Offline)
             time.sleep(0.1)
