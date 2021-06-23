@@ -114,7 +114,7 @@ def ping():
 
         if ping_response == 0:
 
-            os.system('cls')
+            os.system('clear')
 
             print(Online)
 
