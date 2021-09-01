@@ -4,7 +4,7 @@ import socket,random,sys,time,os
 from colorama import *
 init()
 
-os.system(f'cls & mode 85,20 & title [A S - D E S T R O Y E R] - ATTACK PANEL')
+#os.system(f'cls & mode 85,20 & title [A S - D E S T R O Y E R] - ATTACK PANEL')
 
 
 if len(sys.argv)==1:
